@@ -1,5 +1,6 @@
 import { ShortCurtEntity } from '../domain/shortCutEntity'
 import { ShortCutInterface } from '../domain/shortCutInterface'
+import { AppError } from '../presentation/errors/error'
 import { generateShortCutCode } from '../utils/generateShortCutCode'
 
 export class CreateShortCut {
@@ -36,6 +37,6 @@ export class CreateShortCut {
       }
     }
 
-    throw new Error('Could not generate a unique shortcut code')
+    throw new AppError('Could not generate a unique shortcut code', 409)
   }
 }

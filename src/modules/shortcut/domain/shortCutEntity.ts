@@ -1,3 +1,5 @@
+import { AppError } from '../presentation/errors/error'
+
 export class ShortCurtEntity {
   readonly baseUrl: string
   readonly code: string
@@ -26,19 +28,19 @@ export class ShortCurtEntity {
 
   validate() {
     if (!this.code) {
-      throw new Error('Code is required')
+      throw new AppError('Code is required')
     }
     if (this.code.length > 6) {
-      throw new Error('code must be less than 6 characters')
+      throw new AppError('code must be less than 6 characters')
     }
     if (!this.baseUrl) {
-      throw new Error('baseUrl is required')
+      throw new AppError('baseUrl is required')
     }
     if (this.click < 0) {
-      throw new Error('clicks must be greater than or equal to 0')
+      throw new AppError('clicks must be greater than or equal to 0')
     }
     if (!this.createdAt) {
-      throw new Error('createdAt is required')
+      throw new AppError('createdAt is required')
     }
   }
 
