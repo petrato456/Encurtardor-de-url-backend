@@ -1,21 +1,21 @@
 export class ShortCurtEntity {
   readonly baseUrl: string
   readonly code: string
-  readonly clicks: number
+  readonly click: number
   readonly createdAt: Date
 
   constructor(baseUrl: string, code: string, clicks: number, createdAt: Date) {
     this.baseUrl = baseUrl
     this.code = code
-    this.clicks = clicks
+    this.click = clicks
     this.createdAt = createdAt
   }
 
   getBaseUrl() {
     return this.baseUrl
   }
-  getClicks() {
-    return this.clicks
+  getClick() {
+    return this.click
   }
   getCreatedAt() {
     return this.createdAt
@@ -34,7 +34,7 @@ export class ShortCurtEntity {
     if (!this.baseUrl) {
       throw new Error('baseUrl is required')
     }
-    if (this.clicks < 0) {
+    if (this.click < 0) {
       throw new Error('clicks must be greater than or equal to 0')
     }
     if (!this.createdAt) {

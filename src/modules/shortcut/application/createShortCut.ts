@@ -11,7 +11,7 @@ export class CreateShortCut {
     if (existsShortCut) {
       const response = `www.shortcut.com/${existsShortCut.getCode()}`
       const updatedShortCut = existsShortCut.withClicks(
-        existsShortCut.getClicks() + 1,
+        existsShortCut.getClick() + 1,
       )
 
       await this.shortCutRepository.update(updatedShortCut)
